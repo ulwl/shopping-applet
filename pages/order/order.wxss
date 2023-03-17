@@ -1,0 +1,100 @@
+/* pages/order/order.wxss */
+
+.order-bar {
+    height: 60rpx;
+    display: flex;
+    justify-content: space-around;
+    font-size: 32rpx;
+    line-height: 60rpx;
+}
+.order-bar .bar-item {
+    /* display: flex;
+    background-color: pink;
+    align-items: center; */
+    /* background-color: pink; */
+    width: 100%;
+    text-align: center;
+}
+.order-bar .active {
+    border-bottom: 1rpx solid var(--themeColor);
+}
+/* order-main > order-item > order-id + order-price + order-date */
+
+.order-main {
+    padding: 20rpx;
+    display: flex;
+    flex-direction: column;
+}
+.order-main .order-none {
+    width: 400rpx;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 32rpx;
+    font-weight: bold;
+    padding-top: 100rpx;
+}
+
+.order-main .order-list .order-item {
+    display: flex;
+    border-bottom: 1rpx solid #ccc;
+    flex-direction: column;
+    padding-top: 20rpx;
+}
+
+/* .order-main .order-list .order-item .order-id {
+    display: flex;
+    
+} */
+.order-main .order-list .order-item .item-info {
+    display: flex;
+    /* flex-direction: row; */
+}
+
+.order-main .order-list .order-item .item-info .item-img {
+    flex: 1;
+}
+
+.order-main .order-list .order-item .item-info .item-img image {
+    width: 80%;
+}
+
+.order-main .order-list .order-item .item-info .item-title {
+    color: #666;
+    flex: 2;
+    padding-top: 10rpx;
+}
+.order-main .order-list .order-item .item-info .item-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.order-main .order-list .order-item .item-info .item-title .item-pricedate {
+    display: flex;
+    justify-content: space-around;
+    font-size: 32rpx;
+    padding-top: 10rpx;
+    align-items: flex-end;
+}
+
+.order-main .order-item .item-info .item-title .item-pricedate .item-price {
+    color: var(--themeColor);
+    /* margin: auto 0; */
+}
+
+.order-main .order-item .item-info .item-title .item-pricedate .item-date {
+    display: flex;
+    text-align: center;
+    /* background-color: pink; */
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-content .cart-item .item-pricenum .item-count text {
+    display: inline-block;
+    /* padding: 0 20rpx; */
+    min-width: 72rpx;
+    height: 36rpx;
+    font-size: 36rpx;
+}
+

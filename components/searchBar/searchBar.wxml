@@ -1,0 +1,2 @@
+<!--components/searchPage/seachPage.wxml-->
+<van-search value="" shape="round" background="{{themeColor}}" placeholder="请输入搜索关键词" bind:focus="toSearchPage" background="#fb4f30"/>

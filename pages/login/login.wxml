@@ -1,0 +1,16 @@
+<!--pages/login/login.wxml-->
+
+<view class="login-page">
+    <van-notify id="van-notify" />
+    <view class="login-logo">
+        <image src="../../images/logo.png" mode="aspectFit" />
+    </view>
+    <view class="login-btn">
+        <van-button type="primary" block color="#fb4f30" round class="login-wx" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">微信用户一键登录</van-button>
+        <van-button type="primary" block color="#666" plain round class="login-phone">手机号登录/注册</van-button>
+    </view>
+    <view class="agreement">
+        <van-checkbox value="{{checked}}" bind:change="onChange">登录代表您已同意 <navigator url="">优购服务协议、隐私政策</navigator>
+        </van-checkbox>
+    </view>
+</view>

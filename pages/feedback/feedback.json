@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+      "navs": "../../components/navs/navs"
+  },
+  "navigationBarTitleText": "意见反馈"
+}

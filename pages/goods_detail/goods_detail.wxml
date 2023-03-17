@@ -1,0 +1,60 @@
+<!--pages/goods_detail/goods_detail.wxml-->
+<!-- 轮播图 -->
+<view class="detail-swiper">
+    <swiper circular autoplay indicator-dots>
+        <swiper-item class="swiper-item" wx:for="{{goodInfo.pics}}" wx:key="pics_id" data-url="{{item.pics_mid}}" bind:tap="handlePrevewImage">
+            <!-- {{index}} -->
+            <image src="{{item.pics_mid}}" mode="widthFix" />
+        </swiper-item>
+    </swiper>
+</view>
+<view class="good-price">￥{{goodInfo.goods_price}}</view>
+<view class="good-title">
+    <view class="good-name">
+        {{goodInfo.goods_name}}
+    </view>
+    <view class="good-collect" bind:tap="handleCollect">
+        <van-icon name="star" wx:if="{{isCollect}}" />
+        <van-icon name="star-o" wx:else />
+        <view>收藏</view>
+    </view>
+</view>
+
+<view class="good-info">
+    <view class="title-text">商品详情</view>
+    <view class="good-content">
+        <rich-text nodes="{{goodInfo.goods_introduce}}">
+        </rich-text>
+    </view>
+</view>
+
+<view class="bottom-bar">
+    <view class="bar-item">
+        <van-icon name="service-o" size="1.5em" />
+        <view>
+            客服
+        </view>
+        <button open-type="contact">
+
+        </button>
+    </view>
+    <view class="bar-item">
+        <van-icon name="share-o" size="1.5em" />
+        <view>
+            分享
+        </view>
+        <button open-type="share">
+
+        </button>
+    </view>
+    <navigator open-type="switchTab" url="/pages/cart/cart" class="bar-item">
+        <van-icon name="shopping-cart-o" size="1.5em" />
+        <view>
+            购物车
+        </view>
+    </navigator>
+    <!-- <van-button type="default" class="bar-item btn-addCart" color="#ffa500">加入购物车</van-button>
+    <van-button type="default" class="bar-item btn-buy" color="#fb4f30">立即购买</van-button> -->
+    <button class="bar-item btn-addCart" bind:tap="handleAddCart">加入购物车</button>
+    <button class="bar-item btn-buy" bind:tap="handleBuy">立即购买</button>
+</view>

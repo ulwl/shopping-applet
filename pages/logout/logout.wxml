@@ -1,0 +1,4 @@
+<!--pages/logout/logout.wxml-->
+<view class="user-logout">
+    <button type="warn" class="btn-logout" bind:tap="userLogout">退出登录</button>
+</view>

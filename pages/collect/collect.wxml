@@ -1,0 +1,34 @@
+<!--pages/collect/collect.wxml-->
+<navs navs="{{tabs}}"></navs>
+
+<view class="collect-main">
+    <view class="collect-title">
+        <text class="collect-item active">全部</text>
+        <text class="collect-item">正在热卖</text>
+        <text class="collect-item">即将上线</text>
+    </view>
+</view>
+
+<view class="collect-content">
+    <view class="collect-list" wx:if="{{collect.length>0}}">
+        <navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}" wx:for="{{collect}}" wx:key="goods_id" class="collect-item">
+            <view class="item-img">
+                <image src="{{item.goods_small_logo}}" mode="widthFix" />
+            </view>
+            <view class="item-info">
+                <view class="item-title">
+                    <text>{{item.goods_name}}</text>
+                </view>
+                <view class="item-price">￥{{item.goods_price}}</view>
+            </view>
+        </navigator>
+    </view>
+    <view wx:else>
+        <view class="collect-none">
+            <image src="../../images/empty-image.png" mode="widthFix" />
+            <view>
+                收藏为空
+            </view>
+        </view>
+    </view>
+</view>

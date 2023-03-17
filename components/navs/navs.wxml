@@ -1,0 +1,4 @@
+<!--components/navs/navs.wxml-->
+<view class="navs-bar">
+    <view class="navs-item {{item.isActive ? 'active' : ''}}" wx:for="{{navs}}" wx:key="index" data-index="{{index}}" bind:tap="handleItemTap">{{item.value}}</view>
+</view>

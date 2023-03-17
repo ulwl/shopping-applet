@@ -1,0 +1,10 @@
+<!--pages/paysuccess/paysuccess.wxml-->
+<!-- <text>pages/paysuccess/paysuccess.wxml</text> -->
+<view class="scu-content">
+    <view class="scu-icon"><van-icon name="passed" color="#1aad19" size="6rem" /></view>
+    <view class="scu-text"><text decode="true">&nbsp;已成功支付！</text></view>
+    <view class="goto">
+        <button class="btn-toindex" size="mini" plain bind:tap="toIndex">返回首页</button>
+        <button class="btn-toOrder" size="mini" type="primary" bind:tap="toOrder">查看订单</button>
+    </view>
+</view>

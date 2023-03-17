@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="container">
+    <!-- <van-search value="{{ value }}" shape="round" background="{{themeColor}}" placeholder="请输入搜索关键词" /> -->
+    <!-- 搜索框组件 -->
+    <searchBar></searchBar>
+    <!-- 轮播图组件 -->
+    <swiper class="swiper-list" autoplay indicator-dots circular>
+        <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+            <navigator url="https://wwww.baidu.com" open_type="{{item.open_type}}">
+                <image src="{{item.image_src}}" mode="widthFix" />
+            </navigator>
+        </swiper-item>
+    </swiper>
+    <!-- 分类组件 -->
+    <view class="cate-list">
+        <navigator url="item.navigator_url" wx:for="{{cateList}}" open-type="switchTab" wx:key="name">
+            <image src="{{item.image_src}}" mode="widthFix" />
+        </navigator>
+    </view>
+    <!-- 底部分类 -->
+    <view class="floor">
+        <view class="floor-list" wx:for="{{floorList}}" wx:key="index" wx:for-item="Litem">
+            <view class="floor-title">
+                <image src="{{Litem.floor_title.image_src}}" mode="widthFix" />
+            </view>
+            <view class="floor-item">
+                <navigator  wx:for="{{Litem.product_list}}" wx:key="name" wx:for-item="Iitem" wx:for-index="Iindex" url="{{Iitem.navigator_url}}" open-type="{{Iitem.open_type}}">
+                    <image src="{{Iitem.image_src}}" mode="{{Iindex === 0 ? 'widthFix' : 'scaleToFill'}}"/>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

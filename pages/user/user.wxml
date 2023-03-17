@@ -1,0 +1,114 @@
+<!--pages/user/user.wxml-->
+<view class="user-info">
+    <!-- 根据用户的登录信息控制显示 -->
+  <view class="user-show" wx:if="{{userInfo.avatarUrl}}">
+    <navigator url="/pages/logout/logout" class="user-login-btn">
+      <image src="{{userInfo.avatarUrl}}" mode="scaleToFill" class="user-avatar" />
+      <view>{{userInfo.nickName}}</view>
+    </navigator>
+  </view>
+  <view class="user-show" wx:else>
+    <navigator url="/pages/login/login" class="user-login-btn">
+      <image src="../../images/user-avatar.png" mode="scaleToFill" class="user-avatar" />
+      <view>登录/注册</view>
+    </navigator>
+  </view>
+  <!-- <view class="user-show">
+        <image src="" mode="" class="user-avatar" />
+        <navigator url="user-login-btn">登录/注册</navigator>
+    </view> -->
+</view>
+<view class="bottom-bg">
+
+</view>
+<view class="collect-info">
+  <navigator url="/pages/collect/collect" class="collect-shop">
+    <view class="collect-num">
+      0
+    </view>
+    <view class="collect-name">
+      收藏的店铺
+    </view>
+  </navigator>
+  <navigator url="/pages/collect/collect" class="collect-product">
+    <view class="collect-num">
+      {{collectNums}}
+    </view>
+    <view class="collect-name">
+      收藏的商品
+    </view>
+  </navigator>
+  <navigator url="/pages/collect/collect" class="attention-product">
+    <view class="collect-num">
+      0
+    </view>
+    <view class="collect-name">
+      关注的商品
+    </view>
+  </navigator>
+  <navigator url="/pages/collect/collect" class="my-footmark">
+    <view class="collect-num">
+      0
+    </view>
+    <view class="collect-name">
+      我的足迹
+    </view>
+  </navigator>
+</view>
+
+<view class="my-order">
+  <view class="order-title">
+    我的订单
+  </view>
+  <view class="order-content">
+    <navigator url="/pages/order/order?type=1">
+      <van-icon name="orders-o" class="order-icon" size="40rpx" color="{{themeColor}}" />
+      <view class="order-name">
+        全部订单
+      </view>
+    </navigator>
+    <navigator url="/pages/order/order?type=2">
+      <van-icon name="pending-payment" class="order-icon" size="40rpx" color="{{themeColor}}" />
+      <view class="order-name">
+        待付款
+      </view>
+    </navigator>
+    <navigator url="/pages/order/order?type=3">
+      <van-icon name="logistics" class="order-icon" size="40rpx" color="{{themeColor}}" />
+      <view class="order-name">
+        待发货
+      </view>
+    </navigator>
+    <navigator url="/pages/order/order?type=4">
+      <van-icon name="refund-o" class="order-icon" size="40rpx" color="{{themeColor}}" />
+      <view class="order-name">
+        退货/退款
+      </view>
+    </navigator>
+  </view>
+</view>
+
+<view class="address">
+  <navigator class="address-content">
+    收获地址管理
+  </navigator>
+</view>
+
+<view class="app-info">
+  <navigator class="app-info-item" url="">
+    <text>联系客服</text>
+    <text>400-618-4000</text>
+  </navigator>
+  <navigator class="app-info-item" url="/pages/feedback/feedback">
+    意见反馈
+  </navigator>
+  <navigator class="app-info-item" url="">
+    关于我们
+  </navigator>
+</view>
+
+<view class="app-recommend">
+  <view class="app-recommend-others">
+    <navigator url="">把应用推荐给其他人</navigator>
+  </view>
+</view>

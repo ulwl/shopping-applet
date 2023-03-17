@@ -1,0 +1,35 @@
+<!--pages/order/order.wxml-->
+
+<navs navs="{{tabs}}"></navs>
+
+<view class="order-main">
+    <view class="order-list" wx:if="{{orders.length>0}}">
+        <view wx:for="{{orders}}" wx:key="order_id" class="order-item">
+            <view class="item-id">
+                订单编号：{{item.order_number}}
+            </view>
+            <view class="item-info">
+                <view class="item-img">
+                    <image wx:if="item.goods_small_logo" src="{{item.goods_small_logo}}" mode="widthFix" />
+                    <image wx:else src="{{defaultImg}}" mode="widthFix" />
+                </view>
+                <view class="item-title">
+                    <view>{{item.goods_name}}</view>
+                    <view class="item-pricedate">
+                        <view class="item-price">￥{{item.goods_price}}</view>
+                        <view class="item-date">
+                            {{item.create_time_cn}}
+                        </view>
+                    </view>
+                </view>
+
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="order-none">
+            <image src="../../images/empty-image.png" mode="widthFix" />
+            <navigator url="/pages/category/category">还没有订单哦</navigator>
+        </view>
+    </view>
+</view>

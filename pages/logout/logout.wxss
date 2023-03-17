@@ -1,0 +1,14 @@
+/* pages/logout/logout.wxss */
+
+.user-logout {
+    position: relative;
+}
+
+.user-logout .btn-logout {
+    position: absolute;
+    width: 50%;
+    background-color: #fb4f30;
+    left: 50%;
+    top: 600rpx;
+    transform: translate(-50%, -50%);
+}

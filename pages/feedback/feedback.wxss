@@ -1,0 +1,56 @@
+/* pages/feedback/feedback.wxss */
+
+.fb-main {
+    display: flex;
+    background-color: #eee;
+    font-size: 28rpx;
+    margin: 10rpx 0;
+}
+
+.fb-main .fb-title {
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 20rpx; */
+}
+
+.fb-main .fb-title .fb-item {
+    height: 60rpx;
+    margin: 20rpx;
+    padding: 0 20rpx;
+    line-height: 60rpx;
+    border: 1rpx solid #ccc;
+    background-color: #fff;
+}
+
+.fb-main .fb-title .active {
+    color: var(--themeColor);
+    border-color: currentColor;
+}
+
+.fb-content {
+    background-color: #fff;
+    margin-top: 20rpx;
+    /* border: 1rpx solid green; */
+
+}
+
+.fb-content textarea {
+    padding: 20rpx;
+    border: 1rpx solid black;
+    margin: 0 auto;
+    margin-bottom: 20rpx;
+}
+
+/* .fb-main .fb-tool {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 30rpx;
+  } */
+
+.btn-submit {
+    width: 20%;
+    margin: 0 auto;
+}
+/* .btn-submit button {
+    
+} */

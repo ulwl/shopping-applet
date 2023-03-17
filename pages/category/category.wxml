@@ -1,0 +1,36 @@
+<!--pages/category/category.wxml-->
+
+<searchBar></searchBar>
+<!-- <van-sidebar active-key="{{ activeKey }}" bind:tap="index">
+    <van-sidebar-item title="标签名" value="1"/>
+    <van-sidebar-item title="标签名" />
+    <van-sidebar-item title="标签名" />
+</van-sidebar> -->
+<view class="category-page">
+    <!-- 左侧滚动菜单 -->
+    <scroll-view class="leftMenu" scroll-y>
+        <view wx:for="{{leftMenuList}}" wx:key="cat_id" class="menu_item  {{index === currentIndex ? 'active': ''}}" bind:tap="handleItemTap" data-index="{{index}}">
+            {{item}}
+        </view>
+    </scroll-view>
+    <!-- 右侧内容列表 -->
+    <scroll-view class="rightContent" scroll-y scroll-top="{{scrollTop}}">
+    <!-- 每一个大分类 -->
+        <view wx:for="{{rightContent}}" wx:key="cat_id" class="goods_list" wx:for-item="LItem" wx:for-index="LIndex">
+            <view class="goods_title">
+                <text class="delimiter">/</text>
+                {{LItem.cat_name}}
+                <text class="delimiter">/</text>
+            </view>
+            <!-- 大项里面的小分类，点击分类时携带着id -->
+            <view class="goods_item">
+                <navigator wx:for="{{LItem.children}}" wx:key="cat_id" wx:for-item="IItem" wx:for-index="IIndex" url="/pages/goods_list/goods_list?cid={{IItem.cat_id}}">
+                    <image src="{{IItem.cat_icon}}" mode="widthFix" />
+                    <view>
+                        {{IItem.cat_name}}
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </scroll-view>
+</view>

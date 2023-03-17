@@ -1,0 +1,18 @@
+<!--pages/search/search.wxml-->
+<view class="search-box">
+    <input value="{{iptvalue}}" placeholder="请输入您要搜索的商品" bindinput="handleInput"> </input>
+    <button bindtap="handleCancel" hidden="{{!isFocus}}">取消</button>
+</view>
+
+<view class="search-content">
+    <view wx:if="{{goods.length>0}}">
+        <navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}" class="search-item" wx:for="{{goods}}" wx:key="goods_id">
+        {{item.goods_name}}
+    </navigator>
+    </view>
+    <view wx:else>
+        <view class="search-none">
+            <image src="../../images/empty-image.png" mode="widthFix" />
+        </view>
+    </view>
+</view>

@@ -1,0 +1,62 @@
+<!--pages/pay/pay.wxml-->
+<view class="receive-info">
+    <view wx:if="{{address.userName}}">
+        <view class="receive-icon">
+            <van-icon name="location-o" size="2rem" color="#fb4f30" />
+        </view>
+        <view class="user-info">
+            <view class="user-address">{{address.fullAddress}}</view>
+            <view class="user-namephone">
+                <view class="user-username">{{address.userName}}</view>
+                <view class="user-phone">{{address.phone}}
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <view style="color: red; padding: 10rpx 20rpx;">
+            获取不到用户信息，请重新登录!!
+        </view>
+    </view>
+</view>
+
+<view class="cart-content">
+    <view class="cart-title">购物车</view>
+    <view class="cart-list" wx:if="{{checkOrder.length>0}}">
+        <view wx:for="{{checkOrder}}" wx:key="goods_id" class="cart-item">
+            <view class="item-img">
+                <image src="{{item.goods_small_logo}}" mode="widthFix" />
+            </view>
+            <view class="item-info">
+                <view class="item-title">
+                    <text>{{item.goods_name}}</text>
+                </view>
+                <view class="item-pricenum">
+                    <view class="item-price">￥{{item.goods_price}}</view>
+                    <view class="item-count">
+                        <text>x {{item.num}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="cart-none">
+            <!-- <van-empty class="custom-image" image="../../images/empty-image.png" description="购物车为空" /> -->
+            <image src="../../images/empty-image.png" mode="widthFix" />
+            <view>
+                没有支付订单
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="bottom-content">
+    <view class="bottom-sum">
+        <view>合计：<text>￥{{totalPrice}}</text></view>
+        <text>包含运费</text>
+    </view>
+    <view class="pay" bind:tap="handlePay">
+        支付({{totalNum}})
+    </view>
+</view>

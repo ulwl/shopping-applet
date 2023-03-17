@@ -1,0 +1,30 @@
+/* pages/login/login.wxss */
+
+.login-page {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.login-page .login-logo {
+  width: 25%;
+  margin: 0 auto;
+}
+
+.login-page .login-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 200rpx;
+  margin: 100rpx 0;
+}
+
+.login-page .agreement {
+  margin-top: 60rpx;
+  display: block;
+  
+}
+.login-page .agreement navigator {
+  display: inline-block;
+  color: var(--themeColor);
+  /* vertical-align: middle; */
+}
